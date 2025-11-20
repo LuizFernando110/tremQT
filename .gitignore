@@ -1,0 +1,43 @@
+# Arquivos de build
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lo
+*.la
+*.qrc.dep
+*.moc
+
+# Arquivos gerados pelo MOC/UIC/RCC
+moc_*.cpp
+moc_*.h
+ui_*.h
+qrc_*.cpp
+
+# Build directories comuns
+build*/
+debug/
+release/
+
+# Arquivos do Qt Creator / QMake
+*.pro.user
+*.pro.user.*
+*.qmake.stash
+*.autosave
+
+# Makefile gerado
+Makefile*
+*.pri
+
+# Logs e temporários
+*.log
+*.tmp
+
+# Diretórios diversos
+.DS_Store
+Thumbs.db
+
+# Binários do projeto
+TrabalhoTrem
