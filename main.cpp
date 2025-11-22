@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include <QApplication>
 #include "client.h"
+#include "server.h"
 
 int main(int argc, char *argv[])
 {
@@ -10,6 +11,9 @@ int main(int argc, char *argv[])
 
     Client c;
     c.show();
+
+    Server server;
+    server.startServer();
 
     return a.exec();
 }
