@@ -13,13 +13,16 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
+    client.cpp \
         mainwindow.cpp \
     trem.cpp
 
 HEADERS  += mainwindow.h \
+    client.h \
     trem.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    client.ui
 
 CONFIG  += c++11
 LIBS += -pthread
