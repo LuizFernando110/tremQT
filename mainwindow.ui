@@ -41,7 +41,8 @@ border: 2px solid blue;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: red</string>
+     <string notr="true">background-color: blue
+</string>
     </property>
     <property name="text">
      <string/>
@@ -57,7 +58,7 @@ border: 2px solid blue;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: red</string>
+     <string notr="true">background-color: green</string>
     </property>
     <property name="text">
      <string/>
@@ -141,7 +142,7 @@ border: 2px solid blue;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: red</string>
+     <string notr="true">background-color: #A020F0</string>
     </property>
     <property name="text">
      <string/>
@@ -157,7 +158,7 @@ border: 2px solid blue;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: red</string>
+     <string notr="true">background-color: black</string>
     </property>
     <property name="text">
      <string/>
@@ -190,7 +191,7 @@ border: 2px solid blue;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: red</string>
+     <string notr="true">background-color: pink</string>
     </property>
     <property name="text">
      <string/>
@@ -206,7 +207,7 @@ border: 2px solid blue;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: red</string>
+     <string notr="true">background-color: gray</string>
     </property>
     <property name="text">
      <string/>
