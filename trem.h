@@ -19,6 +19,7 @@ public:
     void start();
     void run();
     void setVelocidade(int);
+    int getId() const {return id;}
     void setEnable(bool);
 
     static int trem4X, trem4Y;

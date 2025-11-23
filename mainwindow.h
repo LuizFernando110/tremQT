@@ -4,6 +4,7 @@
 #include "trem.h"
 #include <QLabel>  
 #include <QMainWindow>
+#include "server.h"
 
 using namespace std;
 
@@ -31,6 +32,7 @@ private:
     Trem *trem5;
     Trem *trem6;
     Trem *trem7;
+    Server *server;
 };
 
 #endif // MAINWINDOW_H
