@@ -38,6 +38,18 @@ MainWindow::MainWindow(QWidget *parent) :
     trem7 = new Trem(7, 490, 280);
     connect(trem7,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem7->start();
+
+    server = new Server(this);
+    server->addTrem(trem1);
+    server->addTrem(trem2);
+    server->addTrem(trem3);
+    server->addTrem(trem4);
+    server->addTrem(trem5);
+    server->addTrem(trem6);
+    server->addTrem(trem7);
+    server->startServer();
+
+    qDebug() << "Servidor TCP iniciado - Porta 5000";
 }
 
 MainWindow::~MainWindow()

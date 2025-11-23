@@ -70,8 +70,11 @@
      <height>0</height>
     </size>
    </property>
+   <property name="minimum">
+    <number>10</number>
+   </property>
    <property name="maximum">
-    <number>100</number>
+    <number>250</number>
    </property>
    <property name="orientation">
     <enum>Qt::Orientation::Horizontal</enum>
@@ -87,7 +90,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>0</string>
+    <string>10</string>
    </property>
   </widget>
   <widget class="QPushButton" name="connectButton">

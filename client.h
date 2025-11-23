@@ -26,6 +26,7 @@ private slots:
     void on_connectButton_clicked();
 
     void on_stopButton_2_clicked();
+    void on_continueButton_clicked();
 
 private:
     Ui::Client *ui;
