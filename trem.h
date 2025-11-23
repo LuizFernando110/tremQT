@@ -4,6 +4,10 @@
 #include <QObject>
 #include <thread>
 #include <chrono>
+#include <QSemaphore>
+#include <cstdlib>
+#include <iostream>
+
 using namespace std;
 
 class Trem : public QObject
@@ -16,6 +20,10 @@ public:
     void run();
     void setVelocidade(int);
     void setEnable(bool);
+
+    static int trem4X, trem4Y;
+    static int trem5X, trem5Y;
+    static QSemaphore semaphores[9];
 
 signals:
     void updateGUI(int,int,int);

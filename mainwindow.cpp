@@ -9,12 +9,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     trem1 = new Trem(1,110,30);
-    connect(trem1,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));    
+    connect(trem1,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int))); 
     trem1->start();
     
     trem2 = new Trem(2, 240, 30);
     connect(trem2,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem2->start();
+    trem1->setVelocidade(90);
 
     trem3 = new Trem(3, 390, 30);
     connect(trem3,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
@@ -23,10 +24,12 @@ MainWindow::MainWindow(QWidget *parent) :
     trem4 = new Trem(4, 130, 180);
     connect(trem4,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem4->start();
+    trem4->setVelocidade(80);
 
     trem5 = new Trem(5, 430, 180);
     connect(trem5,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem5->start();
+    trem5->setVelocidade(80);
 
     trem6 = new Trem(6, 70, 280);
     connect(trem6,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
