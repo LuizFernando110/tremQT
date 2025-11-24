@@ -81,23 +81,23 @@ void Trem::run()
             {   
                 int newX = x;
                 int newY = y;
-                
-                if (y == 30 && x < 360) {
-                    if(x == 220) semaphores[0].release(1);
-                    if(x == 330)semaphores[1].acquire(1);
-                    newX += 10;
+
+                if(y == 30 && x > 220){
+                    if(x==230) semaphores[0].acquire(1);
+                    if(x==350) semaphores[1].release(1);
+                    newX -=10;
                 }
-                else if (x == 360 && y < 130) {
-                    if(y==100)semaphores[3].acquire();
-                    newY += 10;
+                else if(x == 220 && y < 130){
+                    if(y==100) semaphores[3].acquire(1);
+                    newY +=10;
                 }
-                else if (x > 220 && y == 130){
-                    if(x == 230)semaphores[0].acquire(1);
-                    if(x == 350)semaphores[1].release(1);
-                    if(x==240)semaphores[3].release();
-                    newX -= 10;
+                else if(y == 130 && x < 360){
+                    newX +=10;
+                    if(x==230) semaphores[0].release(1);
+                    if(x==350) semaphores[1].acquire(1);
                 }
                 else{
+                    if(y==110) semaphores[3].release(1);
                     newY -= 10;
                 }
                 
@@ -159,10 +159,8 @@ void Trem::run()
                 else{
                     if(x==350)semaphores[2].release(1);
                     if(x==380)semaphores[3].acquire(1);
-                    if(x==240){
-                        semaphores[3].release(1);
-                        semaphores[4].acquire(1);
-                    }
+                    if(x==210) semaphores[3].release(1);
+                    if(x==240)semaphores[4].acquire(1);
                     newX -= 10;
                 }
 
@@ -209,10 +207,8 @@ void Trem::run()
                 else{
                     if(x==350)semaphores[2].release(1);
                     if(x==380)semaphores[3].acquire(1);
-                    if(x==240){
-                        semaphores[3].release(1);
-                        semaphores[4].acquire(1);
-                    }
+                    if(x==200) semaphores[3].release(1);
+                    if(x==240)semaphores[4].acquire(1);
                     newX -= 10;
                 }
 
