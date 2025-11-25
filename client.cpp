@@ -87,3 +87,34 @@ void Client::onReadyRead()
     qDebug() << resposta;
 }
 
+
+void Client::on_startAllButton_clicked()
+{
+    if (socket->state() == QAbstractSocket::ConnectedState){
+        QString comando = "trem all continue " + ui->speed->text();
+        socket->write(comando.toUtf8());
+        qDebug() << "Mensagem enviada:" << comando;
+    }
+}
+
+
+void Client::on_stopAllButton_clicked()
+{
+    if (socket->state() == QAbstractSocket::ConnectedState){
+        QString comando = "trem all stop 0";
+        socket->write(comando.toUtf8());
+        qDebug() << "Mensagem enviada:" << comando;
+    }
+}
+
+
+void Client::on_disconnectButton_clicked()
+{
+    if (socket->state() == QAbstractSocket::ConnectedState) {
+        socket->disconnectFromHost();
+        qDebug() << "Cliente desconectado do servidor!";
+    } else {
+        qDebug() << "Nenhuma conexão ativa para desconectar.";
+    }
+}
+

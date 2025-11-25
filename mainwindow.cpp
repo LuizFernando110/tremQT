@@ -9,35 +9,40 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
 
     trem1 = new Trem(1,110,30);
-    connect(trem1,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int))); 
+    trem1->setEnable(false);
+    connect(trem1,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem1->start();
-    
+
     trem2 = new Trem(2, 240, 30);
+    trem2->setEnable(false);
     connect(trem2,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem2->start();
-    trem1->setVelocidade(90);
 
     trem3 = new Trem(3, 390, 30);
+    trem3->setEnable(false);
     connect(trem3,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem3->start();
 
     trem4 = new Trem(4, 130, 180);
+    trem4->setEnable(false);
     connect(trem4,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem4->start();
-    trem4->setVelocidade(80);
 
     trem5 = new Trem(5, 430, 180);
+    trem5->setEnable(false);
     connect(trem5,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem5->start();
-    trem5->setVelocidade(80);
 
     trem6 = new Trem(6, 70, 280);
+    trem6->setEnable(false);
     connect(trem6,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem6->start();
 
     trem7 = new Trem(7, 490, 280);
+    trem7->setEnable(false);
     connect(trem7,SIGNAL(updateGUI(int,int,int)),SLOT(updateInterface(int,int,int)));
     trem7->start();
+
 
     server = new Server(this);
     server->addTrem(trem1);

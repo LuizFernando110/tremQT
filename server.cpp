@@ -53,30 +53,38 @@ void Server::processCommand(const QString &command){
         return;
     }
 
-    QString target = parts[0];
-    int tremId = parts[1].toInt();
-    QString action = parts[2];
+    QString target = parts[0];  // "trem"
+    QString tremIdStr = parts[1];  // "all" ou número
+    QString action = parts[2];  // "continue" ou "stop"
 
-    int velocidade = 0;
+    int velocidade = (parts.size() >= 4) ? parts[3].toInt() : 0;
 
-    if(parts.size() >= 4) {
-        velocidade = parts[3].toInt();
+    // 🔥 Se for comando para TODOS
+    if (tremIdStr == "all") {
+        for (Trem *trem : trens) {
+            trem->setEnable(action == "continue");
+            trem->setVelocidade(velocidade);
+        }
+        qDebug() << "Comando aplicado a todos os trens!";
+        return;
     }
 
-    Trem* alvo = nullptr;
-    for(Trem *trem : std::as_const(trens)){
-        if(trem->getId() == tremId) {
-            alvo = const_cast<Trem*>(trem);
+    // 🔹 Caso contrário, trata um trem só
+    int tremId = tremIdStr.toInt();
+    Trem *alvo = nullptr;
+    for (Trem *trem : trens) {
+        if (trem->getId() == tremId) {
+            alvo = trem;
             break;
         }
     }
 
     if (!alvo) {
-            qDebug() << "Trem" << tremId << "não encontrado";
-            return;
+        qDebug() << "Trem" << tremId << "não encontrado";
+        return;
     }
 
-    if(action == "continue") alvo->setEnable(true);
-    else if (action == "stop") alvo->setEnable(false);
+    alvo->setEnable(action == "continue");
     alvo->setVelocidade(velocidade);
 }
+
